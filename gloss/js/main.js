@@ -549,7 +549,8 @@ function removePastYearsFromSelect() {
 
 // ======== UTILS ===========
 
-function getElementByClass(className, parent = document) {
+function getElementByClass(className, parent) {
+  parent = parent || document;
   return parent.querySelector('.' + className);
 }
 

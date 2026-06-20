@@ -249,7 +249,8 @@ function toggleSalonsSubmenu(shouldHide) {
   UI.$salonsLinks.prop('tabIndex', shouldHide ? -1 : 0);
 }
 
-function pulse($element, delay = 5000) {
+function pulse($element, delay) {
+  delay = delay || 5000;
   $element.css('transform', 'scale(1.05)');
 
   setTimeout(function () {

@@ -10,7 +10,7 @@ function SkipToContent() {
 }
 
 SkipToContent.prototype.init = function () {
-  const self = this;
+  var self = this;
   this.skipToContent.addEventListener('click', function () {
     self.content.focus();
   });

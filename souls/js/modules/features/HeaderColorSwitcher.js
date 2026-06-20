@@ -20,7 +20,7 @@ HeaderColorSwitcher.prototype.init = function () {
 };
 
 HeaderColorSwitcher.prototype.setHeaderBgColor = function (color) {
-  let rgbColor;
+  var rgbColor;
 
   if (typeof color !== 'string') {
     rgbColor = this.getColor();
@@ -39,11 +39,11 @@ HeaderColorSwitcher.prototype.handleScroll = function () {
 };
 
 HeaderColorSwitcher.prototype.getColor = function () {
-  let color = null;
+  var color = null;
 
-  for (let i = 0; i < SECTIONS_BG_COLORS.length; i++) {
-    const config = SECTIONS_BG_COLORS[i];
-    const section = this.sections[i];
+  for (var i = 0; i < SECTIONS_BG_COLORS.length; i++) {
+    var config = SECTIONS_BG_COLORS[i];
+    var section = this.sections[i];
 
     if (isScrolledDown(section, this.viewportService.halfWindowHeight)) {
       color = config.rgbColor;

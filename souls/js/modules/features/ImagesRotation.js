@@ -15,7 +15,7 @@ ImagesRotation.prototype.handleScroll = function () {
 };
 
 ImagesRotation.prototype.rotateOnView = function () {
-  const self = this;
+  var self = this;
   this.wrappers.forEach(function (wrapper) {
     self.rotate(wrapper);
   });
@@ -32,7 +32,7 @@ ImagesRotation.prototype.rotate = function (wrapper) {
 };
 
 ImagesRotation.prototype.destroy = function () {
-  const self = this;
+  var self = this;
   this.wrappers.forEach(function (wrapper) {
     wrapper.classList.remove(self.rotatedClass);
   });

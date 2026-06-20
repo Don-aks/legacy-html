@@ -26,7 +26,7 @@ LangMenu.prototype.init = function () {
   window.addEventListener(
     'hashchange',
     function () {
-      const lang = this.langSwitcher.changeLanguage();
+      var lang = this.langSwitcher.changeLanguage();
       if (!lang) return;
 
       this.updateLanguageUI(lang);
@@ -42,7 +42,7 @@ LangMenu.prototype.close = function () {
 };
 
 LangMenu.prototype.toggleLangMenu = function (forceState) {
-  let state = forceState;
+  var state = forceState;
 
   if (typeof forceState !== 'boolean') {
     state = !this.menu.classList.contains(this.CLASSES.menuActive);
@@ -55,13 +55,13 @@ LangMenu.prototype.toggleLangMenu = function (forceState) {
     link.setAttribute('tabindex', state ? '0' : '-1');
   });
 
-  const isOpen = this.menu.classList.toggle(this.CLASSES.menuActive, state);
+  var isOpen = this.menu.classList.toggle(this.CLASSES.menuActive, state);
 
   this.menu.setAttribute('aria-hidden', String(!isOpen));
   this.btn.setAttribute('aria-expanded', String(isOpen));
 
   if (isOpen) {
-    const self = this;
+    var self = this;
 
     function onTransitionEnd() {
       self.menu.removeEventListener('transitionend', onTransitionEnd);

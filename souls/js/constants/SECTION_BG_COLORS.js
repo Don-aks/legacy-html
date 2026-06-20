@@ -1,4 +1,4 @@
-const SECTION_BG_COLORS = [
+var SECTION_BG_COLORS = [
   {
     sectionClass: 'footer',
     rgbColor: '190, 90, 75',

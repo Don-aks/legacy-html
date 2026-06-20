@@ -82,7 +82,7 @@ export function scripts() {
         bundle: true,
         minify: true,
         sourcemap: true,
-        target: ['es2020'],
+        target: ['es5'],
         outfile: 'main.min.js',
         plugins: [aliasPlugin()],
       }),

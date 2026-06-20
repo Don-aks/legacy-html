@@ -8,7 +8,7 @@ function ScrollIntoView(menu, services) {
 }
 
 ScrollIntoView.prototype.init = function () {
-  const self = this;
+  var self = this;
   this.onClick = function (e) {
     self.handleClick(e);
   };
@@ -17,17 +17,17 @@ ScrollIntoView.prototype.init = function () {
 };
 
 ScrollIntoView.prototype.handleClick = function (e) {
-  const targetLink = getClosest(e.target, 'a');
+  var targetLink = getClosest(e.target, 'a');
   if (!targetLink) return;
 
-  const href = targetLink.getAttribute('href');
-  const isIgnoreScroll = targetLink.hasAttribute('data-no-smooth-scroll');
+  var href = targetLink.getAttribute('href');
+  var isIgnoreScroll = targetLink.hasAttribute('data-no-smooth-scroll');
 
   if (!this._isAnchor(href) || isIgnoreScroll) {
     return;
   }
 
-  const scrollTarget = document.querySelector(href);
+  var scrollTarget = document.querySelector(href);
   if (!scrollTarget) return;
 
   e.preventDefault();
@@ -35,9 +35,9 @@ ScrollIntoView.prototype.handleClick = function (e) {
     this.menu.changeState(false);
   }
 
-  const topOffset = 0;
-  const elementPosition = scrollTarget.getBoundingClientRect().top;
-  const offsetPosition = elementPosition - topOffset;
+  var topOffset = 0;
+  var elementPosition = scrollTarget.getBoundingClientRect().top;
+  var offsetPosition = elementPosition - topOffset;
 
   window.scrollBy({
     top: offsetPosition - this.viewportService.headerWrapperHeight,

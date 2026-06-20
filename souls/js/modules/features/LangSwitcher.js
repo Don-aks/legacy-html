@@ -24,16 +24,16 @@ LangSwitcher.prototype.changeLanguage = function (lang) {
     return;
   }
 
-  const currentLang = this._getLangFromHash();
+  var currentLang = this._getLangFromHash();
 
   if (this._previousLang === null && currentLang === null) {
-    const storedLang = this._getLangFromStorage();
+    var storedLang = this._getLangFromStorage();
     if (this._isLang(storedLang)) {
       setHash(storedLang);
       return;
     }
 
-    const browserLang = navigator.language || navigator.userLanguage;
+    var browserLang = navigator.language || navigator.userLanguage;
     if (this._isLang(browserLang)) {
       setHash(browserLang);
       return;
@@ -60,13 +60,13 @@ LangSwitcher.prototype.changeLanguage = function (lang) {
 LangSwitcher.prototype._cacheOriginalLangItems = function () {
   Object.keys(this.langDict).forEach(
     function (key) {
-      const elem = getEl('lng-' + key);
+      var elem = getEl('lng-' + key);
       if (!elem) {
         console.warn('Element with lng-' + key + ' class not found');
         return;
       }
 
-      const attr = this._getTargetTextAttribute(elem);
+      var attr = this._getTargetTextAttribute(elem);
       if (attr) {
         this.langDict[key][this.originalPageLang] = elem.getAttribute(attr);
         return;
@@ -78,17 +78,17 @@ LangSwitcher.prototype._cacheOriginalLangItems = function () {
 };
 
 LangSwitcher.prototype._translateAllItems = function (lang) {
-  const self = this;
+  var self = this;
 
   Object.keys(this.langDict).forEach(function (key) {
-    const elems = document.querySelectorAll('.lng-' + key);
+    var elems = document.querySelectorAll('.lng-' + key);
     if (elems.length === 0) {
       return;
     }
 
-    let rawText = self.langDict[key][lang];
+    var rawText = self.langDict[key][lang];
 
-    let safeHtml = escapeHTML(rawText).replace(/\n/g, '<br>');
+    var safeHtml = escapeHTML(rawText).replace(/\n/g, '<br>');
     if (lang === self.originalPageLang) {
       safeHtml = rawText;
     }
@@ -103,7 +103,7 @@ LangSwitcher.prototype._translateAllItems = function (lang) {
         el.classList.remove(CLASSES.hidden);
       }
 
-      const attr = self._getTargetTextAttribute(el);
+      var attr = self._getTargetTextAttribute(el);
       if (attr) {
         el.setAttribute(attr, rawText);
         return;
@@ -123,7 +123,7 @@ LangSwitcher.prototype._isLang = function (lang) {
 };
 
 LangSwitcher.prototype._getLangFromHash = function () {
-  const hash = location.hash.replace('#', '');
+  var hash = location.hash.replace('#', '');
   return this._isLang(hash) ? hash : null;
 };
 

@@ -12,7 +12,7 @@ function Notify() {
 }
 
 Notify.prototype.init = function () {
-  const self = this;
+  var self = this;
 
   this.btns.forEach(function (btn) {
     btn.addEventListener('click', function (e) {
@@ -22,7 +22,7 @@ Notify.prototype.init = function () {
 };
 
 Notify.prototype.handleClick = function (e) {
-  const notify = getClosest(e.currentTarget, '.' + this.CLASSES.notify);
+  var notify = getClosest(e.currentTarget, '.' + this.CLASSES.notify);
 
   if (!notify) {
     console.error('No notify found for', e.currentTarget);

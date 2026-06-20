@@ -22,7 +22,7 @@ Parallax.prototype.init = function () {
     scene.style.transformStyle = '';
     scene.style.perspective = '';
 
-    const layers = scene.querySelectorAll('[data-depth]');
+    var layers = scene.querySelectorAll('[data-depth]');
     toArray(layers).forEach(function (el) {
       el.style.position = '';
       el.style.top = '';

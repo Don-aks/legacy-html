@@ -1,5 +1,5 @@
-const LANG_LIST = ['en', 'pl', 'uk'];
-const LANG_DICTIONARY = {
+var LANG_LIST = ['en', 'pl', 'uk'];
+var LANG_DICTIONARY = {
   currency: {
     pl: 'zł',
     uk: '₴',

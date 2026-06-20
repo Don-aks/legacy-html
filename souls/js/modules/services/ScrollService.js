@@ -6,7 +6,7 @@ function ScrollService() {
 }
 
 ScrollService.prototype.init = function () {
-  const self = this;
+  var self = this;
   this.onScroll = throttle(function () {
     self.handleScroll();
   }, 200);
@@ -33,7 +33,7 @@ ScrollService.prototype.register = function (instance) {
 };
 
 ScrollService.prototype.unregister = function (instance) {
-  const index = this.scrollTargets.indexOf(instance);
+  var index = this.scrollTargets.indexOf(instance);
   if (index === -1) {
     throw new Error('Instance not found');
   }

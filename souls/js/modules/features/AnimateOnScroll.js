@@ -20,7 +20,7 @@ AnimateOnScroll.prototype.handleScroll = function () {
 };
 
 AnimateOnScroll.prototype.animateElements = function () {
-  const self = this;
+  var self = this;
   this.animations.forEach(function (config) {
     addClassOnScroll(
       config.el,
@@ -33,13 +33,13 @@ AnimateOnScroll.prototype.animateElements = function () {
 };
 
 AnimateOnScroll.prototype._getAnimated = function () {
-  const elements = document.querySelectorAll('[data-animation]');
+  var elements = document.querySelectorAll('[data-animation]');
 
   return toArray(elements).map(function (el) {
-    const animationName = el.dataset.animation;
-    const container = getClosest(el, '[data-animation-container]');
+    var animationName = el.dataset.animation;
+    var container = getClosest(el, '[data-animation-container]');
 
-    let animationOutName = null;
+    var animationOutName = null;
     if (animationName.indexOf('In') !== -1) {
       animationOutName = animationName.replace('In', 'Out');
     }

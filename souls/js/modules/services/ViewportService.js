@@ -6,7 +6,7 @@ function ViewportService(header) {
 }
 
 ViewportService.prototype.init = function () {
-  const self = this;
+  var self = this;
   this.onResize = throttle(function () {
     self.update();
   }, 200);

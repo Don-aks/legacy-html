@@ -25,53 +25,53 @@ import ScrollIntoView from '@/modules/features/ScrollIntoView';
 import AnimateOnScroll from '@/modules/features/AnimateOnScroll';
 import Parallax from '@/modules/features/Parallax';
 
-const scrollService = new ScrollService();
-const outsideClickService = new OutsideClickService();
-const escStackService = new EscStackService();
-const focusNavigation = new FocusNavigation();
+var scrollService = new ScrollService();
+var outsideClickService = new OutsideClickService();
+var escStackService = new EscStackService();
+var focusNavigation = new FocusNavigation();
 
-const langSwitcher = new LangSwitcher();
+var langSwitcher = new LangSwitcher();
 
-const langMenu = new LangMenu(langSwitcher, {
+var langMenu = new LangMenu(langSwitcher, {
   outsideClickService: outsideClickService,
   escStackService: escStackService,
 });
 
-const header = new Header({
+var header = new Header({
   scrollService: scrollService,
 });
 
 new Preloader(header.logo);
-const lang = langSwitcher.changeLanguage();
+var lang = langSwitcher.changeLanguage();
 langMenu.updateLanguageUI(lang);
 
-const viewportService = new ViewportService(header);
+var viewportService = new ViewportService(header);
 header.viewportService = viewportService;
 header.init();
 
 new SkipToContent();
 new Notify();
-const menu = new Menu({
+var menu = new Menu({
   outsideClickService: outsideClickService,
   escStackService: escStackService,
   focusNavigation: focusNavigation,
 });
 new Cookies();
 
-const headerColorSwitcher = new HeaderColorSwitcher(header, {
+var headerColorSwitcher = new HeaderColorSwitcher(header, {
   scrollService: scrollService,
   viewportService: viewportService,
 });
 
-const imagesRotation = new ImagesRotation(scrollService, viewportService);
-const sliders = new Sliders({
+var imagesRotation = new ImagesRotation(scrollService, viewportService);
+var sliders = new Sliders({
   viewportService: viewportService,
   scrollService: scrollService,
 });
 new ScrollIntoView(menu, { viewportService: viewportService });
 
-const parallax = new Parallax(scrollService, viewportService);
-const animateOnScroll = new AnimateOnScroll({
+var parallax = new Parallax(scrollService, viewportService);
+var animateOnScroll = new AnimateOnScroll({
   viewportService: viewportService,
   scrollService: scrollService,
 });

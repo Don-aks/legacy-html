@@ -1,4 +1,4 @@
-const CLASSES = {
+var CLASSES = {
   overlay: 'overlay',
   locked: lockedClass,
   langLoading: langLoadingClass,

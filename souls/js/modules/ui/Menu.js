@@ -36,7 +36,7 @@ Menu.prototype.close = function () {
 };
 
 Menu.prototype.changeState = function (forceState) {
-  const state =
+  var state =
     typeof forceState === 'boolean'
       ? forceState
       : !this.element.classList.contains(this.CLASSES.menuActive);
@@ -58,7 +58,7 @@ Menu.prototype._updateUI = function (state) {
   document.body.classList.toggle(CLASSES.overlay, state);
 
   // TODO: use visibility instead of tabindex
-  const tabIndex = state ? '0' : '-1';
+  var tabIndex = state ? '0' : '-1';
 
   this.closeBtn.setAttribute('tabindex', tabIndex);
   this.links.forEach(function (link) {
@@ -73,7 +73,7 @@ Menu.prototype._updateUI = function (state) {
 Menu.prototype._onOpen = function () {
   this._removeFocusTrap = setFocusTrap(this.element);
 
-  const self = this;
+  var self = this;
 
   function onTransitionEnd() {
     self.element.removeEventListener('transitionend', onTransitionEnd);

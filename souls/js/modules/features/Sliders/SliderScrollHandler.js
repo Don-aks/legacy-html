@@ -12,11 +12,11 @@ function SliderScrollHandler(sliders, viewportService) {
 }
 
 SliderScrollHandler.prototype.handleScroll = function () {
-  const self = this;
+  var self = this;
 
   this.slidersWithStates.forEach(function (config) {
-    const slider = config.slider;
-    const isScrolled = isScrolledDown(
+    var slider = config.slider;
+    var isScrolled = isScrolledDown(
       slider.el,
       self.viewportService.halfWindowHeight,
     );

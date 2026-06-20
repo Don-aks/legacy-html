@@ -20,7 +20,7 @@ EscStackService.prototype.register = function (instance) {
 };
 
 EscStackService.prototype.unregister = function (instance) {
-  const index = this.stack.indexOf(instance);
+  var index = this.stack.indexOf(instance);
   if (index === -1) {
     throw new Error('Instance not found');
   }
@@ -29,7 +29,7 @@ EscStackService.prototype.unregister = function (instance) {
 };
 
 EscStackService.prototype.init = function () {
-  const self = this;
+  var self = this;
   this.onKeyDown = function (e) {
     self.handleKeyDown(e);
   };
@@ -38,11 +38,11 @@ EscStackService.prototype.init = function () {
 };
 
 EscStackService.prototype.handleKeyDown = function (e) {
-  const isEsc = e.keyCode === 27;
+  var isEsc = e.keyCode === 27;
   if (!isEsc) return;
   // TODO: add preventDefault
 
-  const instance = this.stack[this.stack.length - 1];
+  var instance = this.stack[this.stack.length - 1];
   if (!instance) return;
 
   instance.close();

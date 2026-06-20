@@ -1,4 +1,4 @@
-import Swiper from 'swiper';
+import Swiper from 'swiper/dist/js/swiper.js';
 
 import { getEl } from '@/utilities/getElements';
 
@@ -28,7 +28,7 @@ Sliders.prototype.init = function () {
 };
 
 Sliders.prototype.initSlider = function (name, className, config) {
-  const slider = getEl(className);
+  var slider = getEl(className);
   if (!slider) return;
 
   this.sliders[name] = {

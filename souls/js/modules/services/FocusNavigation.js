@@ -6,7 +6,7 @@ function FocusNavigation() {
 }
 
 FocusNavigation.prototype.init = function () {
-  const self = this;
+  var self = this;
 
   this.onKeyDown = function (e) {
     self.handleKeyDown(e);
@@ -27,7 +27,7 @@ FocusNavigation.prototype.register = function (container, focusableElements) {
 };
 
 FocusNavigation.prototype.unregister = function (container) {
-  const searched = this.containers.filter(function (c) {
+  var searched = this.containers.filter(function (c) {
     return c.element === container;
   });
 

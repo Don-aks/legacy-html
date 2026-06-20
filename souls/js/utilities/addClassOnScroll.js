@@ -5,10 +5,11 @@ function addClassOnScroll(
   container,
   className,
   animationOutName,
-  offset = 0,
+  offset,
 ) {
-  const scrollTrigger = container || element;
-  const isScrolled = isScrolledDown(scrollTrigger, offset);
+  offset = offset || 0;
+  var scrollTrigger = container || element;
+  var isScrolled = isScrolledDown(scrollTrigger, offset);
 
   if (isScrolled) {
     element.classList.add(className);

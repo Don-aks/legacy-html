@@ -1,7 +1,7 @@
 import getFocusable from './getFocusable';
 
 function setFocusTrap(container) {
-  const focusableElements = getFocusable(container);
+  var focusableElements = getFocusable(container);
 
   function handleFocusIn(event) {
     if (!container.contains(event.target)) {
@@ -11,17 +11,17 @@ function setFocusTrap(container) {
   }
 
   function handleKeyDown(event) {
-    const isTabPressed = event.keyCode === 9;
+    var isTabPressed = event.keyCode === 9;
     if (!isTabPressed) return;
 
-    const focusable = focusableElements.filter(function (el) {
+    var focusable = focusableElements.filter(function (el) {
       return el.getAttribute('tabindex') !== '-1' && !el.disabled;
     });
 
     if (focusable.length === 0) return;
 
-    const firstElement = focusable[0];
-    const lastElement = focusable[focusable.length - 1];
+    var firstElement = focusable[0];
+    var lastElement = focusable[focusable.length - 1];
 
     if (event.shiftKey) {
       if (document.activeElement === firstElement) {

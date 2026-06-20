@@ -24,7 +24,7 @@ OutsideClickService.prototype.register = function (instance) {
 };
 
 OutsideClickService.prototype.unregister = function (instance) {
-  const index = this.stack.indexOf(instance);
+  var index = this.stack.indexOf(instance);
   if (index === -1) {
     throw new Error('Instance not found');
   }
@@ -33,7 +33,7 @@ OutsideClickService.prototype.unregister = function (instance) {
 };
 
 OutsideClickService.prototype.init = function () {
-  const self = this;
+  var self = this;
   this.onClick = function (e) {
     self.handleClick(e);
   };
@@ -42,7 +42,7 @@ OutsideClickService.prototype.init = function () {
 };
 
 OutsideClickService.prototype.handleClick = function (e) {
-  const instance = this.stack[this.stack.length - 1];
+  var instance = this.stack[this.stack.length - 1];
   if (!instance) return;
 
   if (instance.element === e.target || instance.element.contains(e.target)) {

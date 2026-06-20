@@ -14,7 +14,7 @@ Header.prototype.init = function () {
   this.changePosition();
   this.scrollTitle();
 
-  const self = this;
+  var self = this;
   this.onScrollWithoutThrottle = function () {
     self.scrollTitle();
   };

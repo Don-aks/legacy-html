@@ -21,7 +21,7 @@ Preloader.prototype.start = function () {
 
   document.body.removeAttribute('aria-busy');
 
-  const self = this;
+  var self = this;
   setTimeout(function () {
     self._animateLogo();
     self._removeWhenAnimationEnds();
@@ -52,11 +52,11 @@ Preloader.prototype._animateLogo = function () {
     return;
   }
 
-  const from = this.logo.getBoundingClientRect();
-  const to = this.headerLogo.getBoundingClientRect();
+  var from = this.logo.getBoundingClientRect();
+  var to = this.headerLogo.getBoundingClientRect();
 
-  const dx = to.left - from.left;
-  const dy = to.top - from.top;
+  var dx = to.left - from.left;
+  var dy = to.top - from.top;
 
   this.logo.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
 };

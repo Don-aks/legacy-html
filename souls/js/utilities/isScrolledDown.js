@@ -1,6 +1,8 @@
-function isScrolledDown(el, offset = 0) {
-  let scrollY = window.innerHeight - offset;
-  let top = el.getBoundingClientRect().top;
+function isScrolledDown(el, offset) {
+  offset = offset || 0;
+
+  var scrollY = window.innerHeight - offset;
+  var top = el.getBoundingClientRect().top;
 
   return top < scrollY;
 }

@@ -13,7 +13,6 @@ function setFixedHeader() {
   var className = 'header--fixed';
   var currentScroll = window.scrollY || window.pageYOffset;
 
-  console.log(currentScroll);
   if (currentScroll > 0) {
     addClass(header, className);
   } else {

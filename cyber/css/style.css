@@ -98,6 +98,12 @@ a {
   color: inherit;
 }
 
+button {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
 /* ======= UTILS ======= */
 
 .d-f {
@@ -419,7 +425,6 @@ strong {
   color: #ffffff;
   background-color: #c9262a;
   border-radius: 80px;
-  border: 0;
 
   transition:
     background-color 0.3s,

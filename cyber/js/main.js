@@ -1,8 +1,8 @@
 'use strict';
 
 // STICKY HEADER
-const SCROLL_THRESHOLD = 70;
-let lastScroll = 0;
+var SCROLL_THRESHOLD = 70;
+var lastScroll = 0;
 
 var header = getEl('.header');
 window.addEventListener('scroll', throttle(setFixedHeader, 150));

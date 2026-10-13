@@ -674,9 +674,18 @@ strong {
   margin-left: 4px;
 }
 
+.hero__btn--mobile {
+  display: none;
+  padding: 13px 18px;
+}
+
 @media (max-width: 575px) {
   .hero__btn {
-    padding: 13px 18px;
+    display: none;
+  }
+
+  .hero__btn--mobile {
+    display: block;
   }
 }
 

@@ -21,7 +21,7 @@
                 alt="Логотип OVODOV"
               />
             </a>
-            <button class="phone-btn header__btn" type="button">
+            <button class="phone-btn header__btn js-open-modal" type="button">
               Замовити дзвінок
             </button>
           </div>
@@ -46,10 +46,13 @@
                   <br />
                   для вашого бізнесу
                 </p>
-                <button class="btn hero__btn" type="button">
+                <button class="btn hero__btn js-open-modal" type="button">
                   Залишити заявку на експрес-консультацію
                 </button>
-                <button class="btn hero__btn hero__btn--mobile" type="button">
+                <button
+                  class="btn hero__btn hero__btn--mobile js-open-modal"
+                  type="button"
+                >
                   Залишити заявку
                 </button>
               </div>
@@ -286,7 +289,10 @@
               <br />
               <strong>Замовляйте аутсорсинг зараз і обезпасьте себе.</strong>
             </p>
-            <button class="btn section__btn damage__btn" type="button">
+            <button
+              class="btn section__btn damage__btn js-open-modal"
+              type="button"
+            >
               Замовити аутсорсинг інформаційної безпеки
             </button>
           </div>
@@ -352,7 +358,10 @@
               <span class="section__solution-label">Рішення</span>
               — правильні вибудовані процеси з інформаційного захисту
             </p>
-            <button class="btn section__btn antivirus__btn" type="button">
+            <button
+              class="btn section__btn antivirus__btn js-open-modal"
+              type="button"
+            >
               Залишити заявку
             </button>
           </div>
@@ -422,7 +431,10 @@
                 </li>
               </ul>
             </div>
-            <button class="btn section__btn getting__btn" type="button">
+            <button
+              class="btn section__btn getting__btn js-open-modal"
+              type="button"
+            >
               Залишити заявку
             </button>
           </div>
@@ -466,7 +478,7 @@
                   на управління бізнесом та вирішення стратегічних завдань
                 </li>
               </ul>
-              <button class="btn section__btn" type="button">
+              <button class="btn section__btn js-open-modal" type="button">
                 Залишити заявку
               </button>
             </div>
@@ -496,8 +508,8 @@
                 class="about__image"
                 src="img/ukraine.jpg"
                 width="556"
-                height="314"
-                alt="Карта України зафарбована в кольори прапора"
+                height="264"
+                alt="Карта України з фiлiалами компаній в Україні поміченими червоними прапорцями"
               />
             </div>
           </div>
@@ -674,7 +686,10 @@
               , інформаційну безпеку та виконання вимог законодавства на
               підприємствах і в державних організаціях.
             </p>
-            <button class="btn section__btn tools__btn" type="button">
+            <button
+              class="btn section__btn tools__btn js-open-modal"
+              type="button"
+            >
               Залишити заявку
             </button>
           </div>
@@ -719,7 +734,10 @@
               <p class="audit__motivation">
                 Натисніть на кнопку, і ми зв'яжемося з вами найближчим часом.
               </p>
-              <button class="btn section__btn audit__btn" type="button">
+              <button
+                class="btn section__btn audit__btn js-open-modal"
+                type="button"
+              >
                 Залишити заявку
               </button>
             </div>
@@ -779,7 +797,7 @@
                   </strong>
                 </p>
                 <button
-                  class="btn section__btn post-scriptum__btn"
+                  class="btn section__btn post-scriptum__btn js-open-modal"
                   type="button"
                 >
                   Залишити заявку
@@ -805,12 +823,62 @@
               />
             </a>
             <p class="footer__text">© 2026 OVODOV.SU</p>
-            <button class="phone-btn footer__btn" type="button">
+            <button class="phone-btn footer__btn js-open-modal" type="button">
               Замовити дзвінок
             </button>
           </div>
         </div>
       </footer>
+    </div>
+
+    <div class="modal-backdrop"></div>
+    <div class="modal" role="dialog" aria-modal="true">
+      <form class="modal__form" action="#">
+        <button class="modal__close-btn js-close-modal" type="button"></button>
+
+        <h2 class="modal__title">Замовити дзвінок</h2>
+
+        <label class="visually-hidden" for="input-modal-name">Ваше ім'я</label>
+        <input
+          class="modal__input"
+          type="text"
+          name="name"
+          id="input-modal-name"
+          placeholder="Ваше ім'я"
+          autocomplete="name"
+          required
+        />
+
+        <label class="visually-hidden" for="input-tel">Ваш телефон</label>
+        <input
+          class="modal__input"
+          type="tel"
+          name="tel"
+          id="input-tel"
+          placeholder="Ваш телефон"
+          autocomplete="tel"
+          required
+        />
+
+        <button class="btn modal__btn" type="submit">Відправити</button>
+      </form>
+
+      <div class="modal__success-info" role="alert" aria-live="polite">
+        <h2 class="modal__title modal__success-title">Чекайте на дзвінок!</h2>
+        <svg
+          class="modal__success-icon"
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M10 0C15.523 0 20 4.47701 20 10C20 15.523 15.523 20 10 20C4.47701 20 0 15.523 0 10C0 4.47701 4.47701 0 10 0ZM8.85725 13.7765L14.7073 7.9265C15.0983 7.5365 15.0983 6.9035 14.7073 6.5125C14.3163 6.1225 13.6842 6.1225 13.2933 6.5125L8.85725 10.9485L6.70725 8.7985C6.31625 8.4075 5.68425 8.4075 5.29325 8.7985C4.90225 9.1895 4.90225 9.8215 5.29325 10.2125L8.85725 13.7765Z"
+          />
+        </svg>
+      </div>
     </div>
 
     <script src="js/main.js"></script>

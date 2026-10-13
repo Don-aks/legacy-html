@@ -499,6 +499,8 @@ strong {
   right: 0;
   z-index: 2;
 
+  min-width: 305px;
+
   background-color: #ffffff;
   transition:
     box-shadow 0.3s,

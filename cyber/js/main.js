@@ -64,7 +64,7 @@ function getEl(selector) {
 }
 
 function getAllEls(selector) {
-  return document.querySelectorAll(selector);
+  return toArray(document.querySelectorAll(selector));
 }
 
 function addClass(el, className) {
@@ -75,4 +75,8 @@ function addClass(el, className) {
 
 function removeClass(el, className) {
   el.className = el.className.replace(className, '');
+}
+
+function toArray(obj) {
+  return Array.prototype.slice.call(obj);
 }

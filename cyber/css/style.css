@@ -528,6 +528,12 @@ strong {
   transition: padding 0.3s;
 }
 
+@media (max-width: 575px) {
+  .header__inner {
+    justify-content: center;
+  }
+}
+
 .header__logo {
   transform: translateX(3px);
 }

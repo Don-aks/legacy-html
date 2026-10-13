@@ -68,13 +68,16 @@ function getAllEls(selector) {
 }
 
 function addClass(el, className) {
-  if (el.className.includes(className)) return;
+  if ((' ' + el.className + ' ').indexOf(' ' + className + ' ') !== -1) return;
 
   el.className += ' ' + className;
+  el.className = el.className.trim();
 }
 
 function removeClass(el, className) {
-  el.className = el.className.replace(className, '');
+  el.className = (' ' + el.className + ' ')
+    .replace(' ' + className + ' ', ' ')
+    .trim();
 }
 
 function toArray(obj) {

@@ -220,6 +220,13 @@ strong {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
+  text-wrap: balance;
+}
+
+@media (max-width: 575px) {
+  .section__text {
+    text-align: left;
+  }
 }
 
 .section__solution {

@@ -44,29 +44,38 @@ window.addEventListener('keydown', function (event) {
   }
 });
 
-window.addEventListener('scroll', throttle(setFixedHeader, 150));
+var throttledSetFixedHeader = throttle(setFixedHeader, 150);
+
+window.addEventListener('scroll', function () {
+  var currentScroll = window.scrollY || window.pageYOffset;
+
+  if (currentScroll === 0) {
+    removeClass(header, 'header--hidden');
+    removeClass(header, 'header--fixed');
+    lastScroll = 0;
+    return;
+  }
+
+  addClass(header, 'header--fixed');
+  throttledSetFixedHeader();
+});
+
 setFixedHeader();
 
 // FUNCTIONS
 function setFixedHeader() {
-  var className = 'header--fixed';
+  var className = 'header--hidden';
   var currentScroll = window.scrollY || window.pageYOffset;
-
-  if (currentScroll > 0) {
-    addClass(header, className);
-  } else {
-    removeClass(header, className);
-  }
 
   var isScrolledUp = lastScroll - currentScroll > SCROLL_THRESHOLD;
   var isScrolledDown = currentScroll - lastScroll > SCROLL_THRESHOLD;
 
   if (isScrolledDown) {
-    addClass(header, 'header--hidden');
+    addClass(header, className);
   }
 
   if (isScrolledUp || currentScroll === 0) {
-    removeClass(header, 'header--hidden');
+    removeClass(header, className);
   }
 
   lastScroll = currentScroll;
@@ -105,16 +114,14 @@ function successModal() {
 
 // UTILS
 function throttle(callback, delay) {
-  let isThrottled = false;
+  var timeout;
 
-  return function () {
-    if (isThrottled) return;
+  return function (...args) {
+    if (timeout) return;
 
-    callback.apply(this, arguments);
-    isThrottled = true;
-
-    setTimeout(() => {
-      isThrottled = false;
+    timeout = setTimeout(() => {
+      callback.apply(this, args);
+      timeout = null;
     }, delay);
   };
 }

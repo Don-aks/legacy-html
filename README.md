@@ -13,7 +13,7 @@ A curated collection of legacy web projects built with vanilla HTML, CSS, and Ja
 
 This repository contains portfolio-style pet projects that highlight:
 
-- handcrafted HTML/CSS structure
-- vanilla JavaScript interactivity
-- responsive design for desktop and mobile
 - browser compatibility with Internet Explorer 11
+- handcrafted HTML/CSS structure
+- responsive design for desktop and mobile
+- vanilla JavaScript interactivity

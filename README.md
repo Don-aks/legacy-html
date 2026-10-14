@@ -4,10 +4,10 @@ A curated collection of legacy web projects built with vanilla HTML, CSS, and Ja
 
 ## Projects
 
-- [Cyber Security Firm Ovodov](https://legacy-html.vercel.app/cyber)
-- [Hair Salon Gloss](https://legacy-html.vercel.app/gloss)
-- [Beauty Clinic Medi](https://legacy-html.vercel.app/medi)
-- [Natural Products Shop Wild Souls](https://legacy-html.vercel.app/souls)
+- [Cyber Security Firm Ovodov](https://legacy-html.vercel.app/cyber/)
+- [Hair Salon Gloss](https://legacy-html.vercel.app/gloss/)
+- [Beauty Clinic Medi](https://legacy-html.vercel.app/medi/)
+- [Natural Products Shop Wild Souls](https://legacy-html.vercel.app/souls/)
 
 ## About this repo
 
